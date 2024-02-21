@@ -28,4 +28,9 @@ public class AgendamentoEmailDAO {
 				.createQuery("SELECT ae FROM AgendamentoEmail ae WHERE ae.agendado = false",
 						AgendamentoEmail.class).getResultList();
 	}
+	
+	public void alterar(AgendamentoEmail agendamentoEmail) {
+		entityManager.merge(agendamentoEmail);
+	}
+	
 }
